@@ -1,0 +1,49 @@
+package Games.Breakout;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+
+/**
+ * 
+ * Initializing the game
+ * 
+ * @author G5 lab group
+ *
+ */
+public class Breakout extends JFrame {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Breakout() {
+        
+        initUI();
+    }
+    
+    private void initUI() {
+        
+        add(new Board());
+        setTitle("Breakout");
+        
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(Commons.WIDTH, Commons.HEIGTH);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {                
+                Breakout game = new Breakout();
+                game.setVisible(true);                
+            }
+        });
+    }
+}
